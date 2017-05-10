@@ -1,0 +1,174 @@
+// $(document).ready(()=>{
+
+// 	//variable to make sure pressing order complete doesnt remove the table row without pressing confirm order
+// 	var orderConfirmed=[]
+// 	const interval = 10000
+
+// 	var serverResponse = JSON.parse(($('#serverResponse').val()))
+
+// 	var getDisplayedOrders = ((serverResponse)=>{
+// 		arr=[]
+// 		for(i in serverResponse){
+// 			arr.push(serverResponse[i]._id)
+// 		}
+// 		return arr
+// 	})
+
+// 	displayedItems=getDisplayedOrders(serverResponse)
+
+// 	//request for data every 'interval' seconds
+// 	window.setInterval(()=>{
+// 		var arr=window.location.href.split('/')
+// 		var branch=arr[arr.length-1]
+// 		newData=null
+
+// 		$.get('/adminMainPageUpdate/'+branch, (orders)=>{
+// 			var newOrderIds=[]
+
+// 			for(i in orders["orders"]){
+// 				console.log(orders["orders"][i]._id)
+// 				console.log(displayedItems)
+// 				if(displayedItems.indexOf(orders["orders"][i]._id)==-1){
+// 					displayedItems.push(orders["orders"][i]._id)
+// 					newOrderIds.push(orders["orders"][i]._id)
+// 				}
+// 			}
+// 			//display the new orders stored in newData
+// 			console.log("new orders "+newOrderIds)
+
+// 			if (newOrderIds.length>0){
+// 				for(id in newOrderIds){
+// 					for(i in orders["orders"]){
+// 						order=orders["orders"][i]
+// 						if(order._id==newOrderIds){
+// 							tr="<tr class='order"+String(order.phoneNumber)+"'><td id='orderId"+order.phoneNumber+"'>"+order._id+"</td>"
+// 							tr+="<td>"+order.phoneNumber+"</td>"
+// 							tr+="<td>"+JSON.stringify(order.address)+"</td>"
+// 							tr+="<td>"+JSON.stringify(order.items)+"</td>"
+// 							tr+="<td>"+order.totalAmount+"</td>"
+// 							tr+="<td><button type='button', id='confirmBtn"+String(order.phoneNumber)+"', class='order"+order.phoneNumber+"'>Confirm Order</button>"
+// 							tr+="<td><button type='button', id='cancelBtn"+String(order.phoneNumber)+"', class='order"+order.phoneNumber+"'>Cancel Order</button>"
+// 							tr+="<td><button type='button', id='orderCompleteBtn"+String(order.phoneNumber)+"', class='order"+order.phoneNumber+"'>Order Complete</button>"
+// 							tr+="<td><button type='button', id='sendMessageBtn"+String(order.phoneNumber)+"', class='order"+order.phoneNumber+"'>Send Message</button>"
+// 							tr+="</tr>"
+
+// 							$('#orderTable tr:last').after(tr)
+// 						}
+// 					}
+// 				}
+// 			}
+
+// 		})
+// 	},interval)
+
+
+// 	$(document).on('click','[id^=confirmBtn]',(event)=>{
+
+// 		var btnId=event.target.id
+// 		var phoneNumber=btnId.replace('confirmBtn','')
+// 		orderID=$('#orderId'+phoneNumber).text()
+// 		console.log(orderID+", "+btnId)
+// 		$.ajax({
+// 			method:'POST',
+// 			url:'/confirmOrder',
+// 			data: {orderId: orderID},
+// 			dataType:'json',
+// 			contentType: "application/x-www-form-urlencoded"
+// 		})
+// 		orderConfirmed.push(orderID)
+// 	})
+
+
+// 	$(document).on('click','[id^=cancelBtn]',(event)=>{
+
+// 		var btnId=event.target.id
+// 		var phoneNumber=btnId.replace('cancelBtn','')
+// 		orderID=$('#orderId'+phoneNumber).text()
+// 		console.log(orderID+", "+btnId)
+// 		$.ajax({
+// 			method:'POST',
+// 			url:'/cancelOrder',
+// 			data: {orderId: orderID},
+// 			dataType:'json',
+// 			contentType: "application/x-www-form-urlencoded"
+// 		})
+// 		$(".order"+phoneNumber).remove()
+// 	})
+
+// 	$(document).on('click','[id^=orderCompleteBtn]',(event)=>{
+
+// 		var btnId=event.target.id
+// 		var phoneNumber=btnId.replace('orderCompleteBtn','')
+// 		orderID=$('#orderId'+phoneNumber).text()
+// 		console.log(orderID+", "+btnId)
+// 		$.ajax({
+// 			method:'POST',
+// 			url:'/orderComplete',
+// 			data: {orderId: orderID},
+// 			dataType:'json',
+// 			contentType: "application/x-www-form-urlencoded"
+// 		})
+
+// 		if(orderConfirmed.indexOf(orderID)!=-1){
+// 			$(".order"+phoneNumber).remove()
+// 		}
+// 	})
+
+// 	$(document).on('click','[id^=sendMessageBtn]',(event)=>{
+// 		var btnId=event.target.id
+// 		var phoneNumber=btnId.replace('sendMessageBtn','')
+// 		orderID=$('#orderId'+phoneNumber).text()
+// 		console.log(orderID+", "+btnId)
+// 		// $.ajax({
+// 		// 	method:'DELETE',
+// 		// 	url:'/cancelOrder',
+// 		// 	data: {orderId: orderID},
+// 		// 	dataType:'json',
+// 		// 	contentType: "application/x-www-form-urlencoded"
+// 		// })
+// 	})
+
+// })
+//the server will send orders
+//will ask server for new orders every 30seconds
+//orders have 4 stages 1) incomplete 2) processing 3) complete 4) cancelled
+
+head
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+	script(type="text/javascript", src="/javascripts/adminMainPage.js")
+	link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+
+block content
+	h1.
+		Admin Main
+
+	- var order_data =JSON.stringify(orders)
+	input(type='hidden', value=order_data)#serverResponse
+
+	table#orderTable
+		tr
+			th Order ID
+			th Phone Number
+			th Address
+			th Order
+			th Amount
+			th Confirm Order
+			th Cancel Order
+			th Order Complete
+			th Send Message
+		each order in orders
+			div(class='order'+order.phoneNumber)
+				tr(class='order'+order.phoneNumber)
+					td(id='orderId'+order.phoneNumber) #{order._id}
+					td #{order.phoneNumber}
+					td #{order.address}
+					td #{order.items}
+					td #{order.totalAmount}
+					td 
+						button(type='button', id='confirmBtn'+order.phoneNumber, class='order'+order.phoneNumber) Confirm Order
+					td 
+						button(type='button', id='cancelBtn'+order.phoneNumber, class='order'+order.phoneNumber) Cancel Order
+					td 
+						button(type='button', id='orderCompleteBtn'+order.phoneNumber, class='order'+order.phoneNumber) Order Complete
+					td 
+						button(type='button', id='sendMessageBtn'+order.phoneNumber, class='order'+order.phoneNumber) Send Message

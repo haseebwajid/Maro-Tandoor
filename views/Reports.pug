@@ -1,0 +1,24 @@
+doctype HTML
+html(lang = "en",style = "transform: none;")
+meta(charset = "UTF-8")
+meta(http-equix = "X-UA-Compatible" content = "IE=edge")
+meta(name = "viewport" content = "width = device-width, initial-scale = 1")
+body(style = "transform: none; overflow: visible")
+	#root
+	script(type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js")
+	script(type="text/javascript", src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js")
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+	script(src='/javascripts/bootstrap.min.js')
+	script(type="text/javascript", src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js")
+	link(rel="stylesheet", type="text/css", href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css")
+	script(type="text/javascript", src="/javascripts/lib.js")
+	link(rel="stylesheet" type = "text/css" href="/stylesheets/bootstrap.css")
+	script(type = "text/javascript").
+		var allusers = !{JSON.stringify(allUsers)}
+	script(type = "text/javascript").
+		var allorders = !{JSON.stringify(allOrders)}
+	script(type = "text/javascript").
+		var user_data = !{JSON.stringify(user)}
+	script(type = "text/javascript").
+		var menu= !{JSON.stringify(menu)}
+	script(type="text/javascript", src="/javascripts/Reports.js")

@@ -26,281 +26,281 @@ mongoose.model('Order', orderSchema)
 var Order = mongoose.model('Order', orderSchema);
 
 
-	// Order.create({
-	// 	Name:'Ausaf',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-25T12:00:00Z"),
-	// 	totalAmount: 340,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Ausaf',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-25T12:00:00Z"),
-	// 	totalAmount: 340,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Ausaf',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-26T12:00:00Z"),
-	// 	totalAmount: 1000,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Ausaf',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-26T12:00:00Z"),
-	// 	totalAmount: 1000,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Ausaf',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-27T12:00:00Z"),
-	// 	totalAmount: 700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Ausaf',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-27T12:00:00Z"),
-	// 	totalAmount: 700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Ausaf',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
-	// 	date:new Date("2015-03-28T12:00:00Z"),
-	// 	totalAmount: 1700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Ausaf',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
-	// 	date:new Date("2015-03-28T12:00:00Z"),
-	// 	totalAmount: 1700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Ausaf',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-29T12:00:00Z"),
-	// 	totalAmount: 170,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Ausaf',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-29T12:00:00Z"),
-	// 	totalAmount: 170,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Ausaf',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-25T12:00:00Z"),
+		totalAmount: 340,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Ausaf',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-25T12:00:00Z"),
+		totalAmount: 340,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Ausaf',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-26T12:00:00Z"),
+		totalAmount: 1000,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Ausaf',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-26T12:00:00Z"),
+		totalAmount: 1000,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Ausaf',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-27T12:00:00Z"),
+		totalAmount: 700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Ausaf',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-27T12:00:00Z"),
+		totalAmount: 700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Ausaf',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
+		date:new Date("2015-03-28T12:00:00Z"),
+		totalAmount: 1700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Ausaf',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
+		date:new Date("2015-03-28T12:00:00Z"),
+		totalAmount: 1700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Ausaf',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-29T12:00:00Z"),
+		totalAmount: 170,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Ausaf',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-29T12:00:00Z"),
+		totalAmount: 170,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
 
 
-	// 	Order.create({
-	// 	Name:'Umair',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-25T12:00:00Z"),
-	// 	totalAmount: 340,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Umair',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-25T12:00:00Z"),
-	// 	totalAmount: 340,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Umair',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-26T12:00:00Z"),
-	// 	totalAmount: 1000,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Umair',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-26T12:00:00Z"),
-	// 	totalAmount: 1000,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Umair',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-27T12:00:00Z"),
-	// 	totalAmount: 700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Umair',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-27T12:00:00Z"),
-	// 	totalAmount: 700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Umair',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
-	// 	date:new Date("2015-03-28T12:00:00Z"),
-	// 	totalAmount: 1700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Umair',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
-	// 	date:new Date("2015-03-28T12:00:00Z"),
-	// 	totalAmount: 1700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Umair',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-29T12:00:00Z"),
-	// 	totalAmount: 170,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Umair',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-29T12:00:00Z"),
-	// 	totalAmount: 170,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+		Order.create({
+		Name:'Umair',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-25T12:00:00Z"),
+		totalAmount: 340,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Umair',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-25T12:00:00Z"),
+		totalAmount: 340,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Umair',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-26T12:00:00Z"),
+		totalAmount: 1000,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Umair',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-26T12:00:00Z"),
+		totalAmount: 1000,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Umair',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-27T12:00:00Z"),
+		totalAmount: 700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Umair',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-27T12:00:00Z"),
+		totalAmount: 700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Umair',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
+		date:new Date("2015-03-28T12:00:00Z"),
+		totalAmount: 1700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Umair',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
+		date:new Date("2015-03-28T12:00:00Z"),
+		totalAmount: 1700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Umair',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-29T12:00:00Z"),
+		totalAmount: 170,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Umair',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-29T12:00:00Z"),
+		totalAmount: 170,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
 
 	
 
-	// Order.create({
-	// 	Name:'Haseeb',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-25T12:00:00Z"),
-	// 	totalAmount: 340,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Haseeb',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-25T12:00:00Z"),
-	// 	totalAmount: 340,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Haseeb',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-26T12:00:00Z"),
-	// 	totalAmount: 1000,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Haseeb',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
-	// 	date:new Date("2015-03-26T12:00:00Z"),
-	// 	totalAmount: 1000,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Haseeb',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-27T12:00:00Z"),
-	// 	totalAmount: 700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Haseeb',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-27T12:00:00Z"),
-	// 	totalAmount: 700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Haseeb',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
-	// 	date:new Date("2015-03-28T12:00:00Z"),
-	// 	totalAmount: 1700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Haseeb',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
-	// 	date:new Date("2015-03-28T12:00:00Z"),
-	// 	totalAmount: 1700,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Haseeb',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
-	// 	items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-29T12:00:00Z"),
-	// 	totalAmount: 170,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
-	// Order.create({
-	// 	Name:'Haseeb',
-	// 	phoneNumber: '03018474446',
-	// 	address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
-	// 	items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
-	// 	date:new Date("2015-03-29T12:00:00Z"),
-	// 	totalAmount: 170,
-	// 	status:'incomplete'
-	// },(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Haseeb',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-25T12:00:00Z"),
+		totalAmount: 340,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Haseeb',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-25T12:00:00Z"),
+		totalAmount: 340,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Haseeb',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-26T12:00:00Z"),
+		totalAmount: 1000,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Haseeb',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 3, Price:190},{Item:'Nutella Naan', Quantity: 2, Price:190}],
+		date:new Date("2015-03-26T12:00:00Z"),
+		totalAmount: 1000,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Haseeb',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-27T12:00:00Z"),
+		totalAmount: 700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Haseeb',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 1, Price:190},{Item:'Nutella Naan', Quantity: 1, Price:190},{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-27T12:00:00Z"),
+		totalAmount: 700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Haseeb',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
+		date:new Date("2015-03-28T12:00:00Z"),
+		totalAmount: 1700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Haseeb',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Pizza Naan', Quantity: 5, Price:190},{Item:'Pizza Naan', Quantity: 5, Price:190}],
+		date:new Date("2015-03-28T12:00:00Z"),
+		totalAmount: 1700,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Haseeb',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'ModelTown', closestBranch:'ModelTown'},
+		items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-29T12:00:00Z"),
+		totalAmount: 170,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
+	Order.create({
+		Name:'Haseeb',
+		phoneNumber: '03018474446',
+		address:{streetAddress: '367-L Johartown', colony:'DHA', closestBranch:'DHA'},
+		items:[{Item:'Cheese Naan', Quantity: 1, Price:190}],
+		date:new Date("2015-03-29T12:00:00Z"),
+		totalAmount: 170,
+		status:'incomplete'
+	},(err,order)=>{if(err){console.log('1. Couldnt save order')}else{console.log('1. Saved order: ')}})
 	
 
 module.exports = func=()=>{

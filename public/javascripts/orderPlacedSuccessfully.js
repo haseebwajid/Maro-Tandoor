@@ -1,16 +1,30 @@
 let state= {}
-
+console.log(local_data)
 sessionStorage.setItem('success',JSON.stringify(JSON.parse(sessionStorage.getItem('order'))))
 var cart = JSON.parse(sessionStorage.getItem('success'))
 sessionStorage.setItem('order', JSON.stringify([]))
+
+phoneno = JSON.parse(sessionStorage.getItem('num'))
 
 
 if(cart===null){
 	cart = []
 }
-console.log(cart)
 var total = 0
 var branch = ''
+
+err = ''
+
+local_data.forEach(i => {
+	if(i.phoneNumber === phoneno){
+		if((i.orderHistory.length+1)%6 === 0){
+			if(cart.length !== 0){
+				cart = [...cart, [1,'Nutella Naan', 0]]
+				err = 'You get a free nutella Naan for being an awesome customer'
+			}
+		}
+	}
+})
 
 
 
@@ -50,6 +64,7 @@ const Root = state =>
 						React.createElement('div', {className:"row", style: {transform: "none", marginTop: "20px"}},null,
 						React.createElement('div',{className: "col-md-3"},null),
 					React.createElement('div',{className: "col-md-6"},null,
+						React.createElement('p', {style:{color:'white'}}, state.error),
 						React.createElement('h1', {id:'demo', style:{color:"white",marginTop:"150px"}},null)),
 					React.createElement('nav', {className:"col-md-3"},null,
 						React.createElement('div',{id:'nav-wrapper'},null,
@@ -90,7 +105,7 @@ const Root = state =>
 								React.createElement('h5', {style:{color:'white'}}, 'Copyright 2017 Maro Tandoor | All rights reserved'),
 								React.createElement('h5', {style:{color:'white'}}, 'Fonts and logos used are intellectual property of Maro Tandoors. Copying for public use without prior permission can result in legal action.')))))))
 
-setState({Basket:cart, name:'', phoneno:'', address:'',area:'', promo:'' })
+setState({Basket:cart, name:'', phoneno:'', address:'',area:'', promo:'', error:err })
 
 // Set the date we're counting down to
 var countDownDate

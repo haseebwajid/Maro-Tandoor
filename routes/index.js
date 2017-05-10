@@ -160,11 +160,19 @@ router.get('/mainMenu/:category',(req,res)=>{
 });
 
 router.get('/checkout',(req,res)=>{
-	res.render('checkout');
+
+	mongoose.model('Promo').find({}, (err,data)=>{
+		if (err){
+			return console.log(err)
+		}else{
+			res.render('checkout',{'data':data});
+
+		}
+	});
 });
 
 router.get('/orderPlacedSuccessfully',(req,res)=>{
-	mongoose.model('User').find({}, (err,data)=>{
+	mongoose.model('User').findOne({}, (err,data)=>{
 		if (err){
 			return console.log(err)
 		}else{
@@ -174,6 +182,43 @@ router.get('/orderPlacedSuccessfully',(req,res)=>{
 	});
 	
 });
+
+router.post('/checkPromo',(req,res)=>{
+	var code = JSON.parse(req.body.code)
+	console.log(code)
+
+	mongoose.model('Promo').find({}, (err,data)=>{
+		if (err){
+			return console.log(err)
+		}else{
+			flag = 0
+			dsicount = 0
+			data.forEach(i => {
+				if(i.promoCode === code && i.Active){
+					discount = i.discount
+					flag = 1
+				}
+			})
+			if(flag === 1){
+				mongoose.model('Promo').findOneAndUpdate({promoCode:code},{Active:false},(err,data)=>{
+					if (err){
+							return console.log(err)
+					}else{
+						console.log('success')
+					}
+				})
+
+			res.send({response:discount})
+			}
+			else{
+				res.send({response:'invalid'})
+			}
+
+		}
+	});
+
+
+})
 
 router.post('/checkout',(req,res)=>{
 	//=====================================

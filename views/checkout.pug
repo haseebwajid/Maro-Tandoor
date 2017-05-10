@@ -10,4 +10,6 @@ body(style = "transform: none; overflow: visible")
 	script(type="text/javascript", src="/javascripts/lib.js")
 	link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet")
 	link(rel="stylesheet" type = "text/css" href="/stylesheets/bootstrap.css")
+	script(type = "text/javascript").
+		var local_data = !{JSON.stringify(data)}
 	script(type="text/javascript", src="/javascripts/checkout.js")

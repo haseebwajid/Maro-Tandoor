@@ -1,22 +1,43 @@
 let state= {}
-
+console.log(local_data)
 var cart = JSON.parse(sessionStorage.getItem('order'))
 if(cart===null){
 	cart = []
 }
-var total = 0
 var branch = ''
 err = ''
+tot = 0
+	cart.forEach(i => {
+		tot += i[2]*i[0]
+})
+
+discount = 1
 
 
 const promoC = () => {
+	req = {code : JSON.stringify(state.promo)}
 
+	$.ajax({
+				method: 'POST',
+				url: '/checkPromo',
+				data:req,
+				dataType:'json',
+				contentType: "application/x-www-form-urlencoded",
+				success:(res)=>{
+					console.log(res.response)
+					if(res.response ==='invalid'){
+						err = 'Invalid promocode'
+						setState({error:err})
+					}else{
+						err = 'You get a discount of '+ res.response+'%'
+						discount = (100-res.response)/100
+						setState({error:err, total: (tot*discount)})
+					}
+				}
+			})
 }
 const setState = updates => {
-	total = 0
-	cart.forEach(i => {
-		total += i[2]*i[0]
-	})
+	
 	Object.assign(state,updates)
 	ReactDOM.render(React.createElement(Root,state), document.getElementById('root'))
 }
@@ -26,7 +47,7 @@ const handleSubmit = () => {
 		err = 'You cannot check out with an empty cart'
 			setState({error:err})
 	}else{
-		if ((/^[a-zA-Z()]+$/.test(state.name)) && (state.phoneno.toString().length===11) && branch!=='' && state.address!==''){
+		if ((/^[ a-zA-Z()]+$/.test(state.name)) && (state.phoneno.toString().length===11) && branch!=='' && state.address!==''){
 			info = {name : state.name, phoneno:state.phoneno, address:state.address, area: branch, promo:state.promo}
 
 			req={userInfo: JSON.stringify(info), order:JSON.stringify(cart)}
@@ -40,6 +61,7 @@ const handleSubmit = () => {
 				success:(res)=>{
 					console.log(res.response)
 					if(res.response=='valid'){
+						sessionStorage.setItem('num',JSON.stringify(state.phoneno))
 						document.location.href='/orderPlacedSuccessfully'
 					}else if(res.response == 'invalid'){
 						$('#errorMsg').append('Invalid phone number')
@@ -114,9 +136,9 @@ const Root = state =>
 									React.createElement('td',null,null,
 							React.createElement('p',{style:{color:"white"}},"Promo Code")),
 									React.createElement('td',null,null,
-								React.createElement('input',{type:'text',className:"form-control pull-left",style:{width:"400px"}, onChange: ev => setState({promo:ev.target.value}),value:state.promo}, null),
-							React.createElement('button', {onClick: () => promoC(), className:'btn btn-warning btn-md',style:{marginLeft:'10px'}}, "Apply Discount")))))),
+								React.createElement('input',{type:'text',className:"form-control pull-left",style:{width:"400px"}, onChange: ev => setState({promo:ev.target.value}),value:state.promo}, null)))))),
 						React.createElement('p', {style:{color:'red'}},state.error),
+						React.createElement('button', {onClick: () => promoC(), className:'btn btn-warning btn-md pull-right',style:{marginLeft:'10px'}}, "Apply Discount"),
 						React.createElement('div',{className:"btn-toolbar"}, null,
 							React.createElement('button', {onClick: () => goBack(),className:"btn btn-warning btn-lg" } ,"Add more items"),
 						React.createElement('button',{onClick:() => handleSubmit(), className:"btn btn-warning btn-lg"}, "Check Out"))),
@@ -142,13 +164,13 @@ const Root = state =>
 									React.createElement('tbody',null,null,
 										React.createElement('tr',null,null,
 											React.createElement('td',null,null, "Subtotal",
-												React.createElement('span',{className:"pull-right"},"rs. "+total))),
+												React.createElement('span',{className:"pull-right"},"rs. "+state.total))),
 										React.createElement('tr',null,null,
 											React.createElement('td',null,null, "Tax",
-												React.createElement('span',{className:"pull-right"},"rs. "+((total*0.16).toFixed(0))))),
+												React.createElement('span',{className:"pull-right"},"rs. "+((state.total*0.16).toFixed(0))))),
 										React.createElement('tr',null,null,
 											React.createElement('td',{style:{"font-size":"18px"}},null, "Total",
-												React.createElement('span',{className:"pull-right"},"rs. "+(total+total*0.16).toFixed(0)))))),
+												React.createElement('span',{className:"pull-right"},"rs. "+(state.total+state.total*0.16).toFixed(0)))))),
 								React.createElement('hr',null,null)))))),
 React.createElement('footer',{style:{marginTop:'110px'}},null,
 							React.createElement('div',{className:'container text-center'},null,
@@ -159,5 +181,5 @@ React.createElement('footer',{style:{marginTop:'110px'}},null,
 								React.createElement('h5', {style:{color:'white'}}, 'Copyright 2017 Maro Tandoor | All rights reserved'),
 								React.createElement('h5', {style:{color:'white'}}, 'Fonts and logos used are intellectual property of Maro Tandoors. Copying for public use without prior permission can result in legal action.')))))))
 
-setState({Basket:cart, name:'', phoneno:'', address:'',area:'', promo:'',error:err })
+setState({Basket:cart, name:'', phoneno:'', address:'',area:'', promo:'',error:err, total : tot})
 

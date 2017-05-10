@@ -172,7 +172,7 @@ router.get('/checkout',(req,res)=>{
 });
 
 router.get('/orderPlacedSuccessfully',(req,res)=>{
-	mongoose.model('User').findOne({}, (err,data)=>{
+	mongoose.model('User').find({}, (err,data)=>{
 		if (err){
 			return console.log(err)
 		}else{

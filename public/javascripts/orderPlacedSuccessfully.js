@@ -15,7 +15,12 @@ var branch = ''
 
 err = ''
 
-local_data.forEach(i => {
+// local_data.forEach(i => {
+	
+// })
+
+for(var x = 0;x<local_data.length;x++){
+	var i = local_data[x]
 	if(i.phoneNumber === phoneno){
 		if((i.orderHistory.length+1)%6 === 0){
 			if(cart.length !== 0){
@@ -24,7 +29,7 @@ local_data.forEach(i => {
 			}
 		}
 	}
-})
+}
 
 
 

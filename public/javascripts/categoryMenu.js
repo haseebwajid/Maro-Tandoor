@@ -2,31 +2,6 @@ console.log(local_data[0].items)
 let amount = []
 local_data[0].items.forEach(x => amount = [...amount,0])
 let state= {}
-// $(document).ready(()=>{
-
-// 	var serverResponse = JSON.parse($('#serverResponse').val())
-// 	var menuCategory=serverResponse[0].category
-// 	console.log(menuCategory)
-
-	
-// 	$("#addToCartBtn").click(()=>{
-// 		var orderData=JSON.parse(sessionStorage.getItem('order'))
-// 		var formData = JSON.parse(JSON.stringify($("#categoryMenu").serializeArray()))
-
-// 		if (orderData){
-// 			orderData[menuCategory]=formData
-// 			sessionStorage.setItem('order',JSON.stringify(orderData))		
-// 		}else{
-// 			var dict={}
-// 			dict[menuCategory]=formData
-// 			sessionStorage.setItem('order',JSON.stringify(dict))
-// 		}
-
-// 		console.log((sessionStorage.getItem('order')))
-
-// 	});
-
-// });
 
 const setState = updates => {
 	Object.assign(state,updates)

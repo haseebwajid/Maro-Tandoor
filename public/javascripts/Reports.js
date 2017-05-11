@@ -97,13 +97,16 @@ const handleClick2 = () => {
 	setState({Data:data,tab:showTab})
 }
 
-const Logout = () =>{
+const Logout = () => {
+
 	$.ajax({
 		method:'GET',
 		url:'/logout',
-		contentType: "application/x-www-form-urlencoded"
+		contentType: "application/x-www-form-urlencoded",
+		success:()=>{
+			document.location.href ='/login'
+		}
 	})
-	document.location.href ='/login'
 }
 const goBack = () => {
 		document.location.href ='/analytics'

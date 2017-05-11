@@ -59,7 +59,9 @@ router.use(methodOverride(function(req, res){
 }));
 
 router.get('/logout', function (req, res){
+  req.logOut()
   req.session.destroy(function (err) {
+  		res.send()
   		if(err){
   			return console.log(err)
   		}

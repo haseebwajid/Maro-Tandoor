@@ -237,15 +237,17 @@ const goBack = () => {
 		document.location.href ='/analytics'
 }
 
-const Logout = () =>{
-	$.ajax({
-		method:'GET',
-		url:'/logout',
-		contentType: "application/x-www-form-urlencoded"
-	})
-	document.location.href ='/login'
-}
+const Logout = () => {
 
+  $.ajax({
+    method:'GET',
+    url:'/logout',
+    contentType: "application/x-www-form-urlencoded",
+    success:()=>{
+      document.location.href ='/login'
+    }
+  })
+}
 
 
 const Root = state => 

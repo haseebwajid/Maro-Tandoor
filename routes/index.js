@@ -174,14 +174,16 @@ router.get('/checkout',(req,res)=>{
 });
 
 router.get('/orderPlacedSuccessfully',(req,res)=>{
+	var allOrders=getAllOrders()
+	allOrders.then(orders=>
 	mongoose.model('User').find({}, (err,data)=>{
 		if (err){
 			return console.log(err)
 		}else{
-			res.render('orderPlacedSuccessfully',{'users':data});
+			res.render('orderPlacedSuccessfully',{'users':data,'orders':orders});
 
 		}
-	});
+	}));
 	
 });
 

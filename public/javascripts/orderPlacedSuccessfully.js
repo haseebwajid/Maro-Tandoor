@@ -5,6 +5,7 @@ var cart = JSON.parse(sessionStorage.getItem('success'))
 sessionStorage.setItem('order', JSON.stringify([]))
 
 phoneno = JSON.parse(sessionStorage.getItem('num'))
+console.log(allorders)
 
 
 if(cart===null){
@@ -15,9 +16,13 @@ var branch = ''
 
 err = ''
 
-// local_data.forEach(i => {
-	
-// })
+ordlen= 0
+
+allorders.forEach(order => {
+	if(order.stat!=='complete')
+		ordlen++
+})
+
 
 for(var x = 0;x<local_data.length;x++){
 	var i = local_data[x]
@@ -118,7 +123,7 @@ var countDownDate
 if(cart.length === 0){
 	countDownDate = new Date().getTime()
 }else{
-	countDownDate = new Date().getTime() + 2700000;
+	countDownDate = new Date().getTime() + 1800000 + 25000*ordlen;
 }
 
 

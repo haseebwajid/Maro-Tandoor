@@ -180,6 +180,9 @@ var layout = {
 
 const handleClick2 = () =>{
 
+countx=0
+county =0
+
 allorders.forEach(i => {
 	var x = new Date(i.date)
 	if(x.getTime() >= sdate.getTime() && x.getTime() <= edate.getTime()){

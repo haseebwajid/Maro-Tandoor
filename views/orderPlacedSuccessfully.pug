@@ -12,4 +12,6 @@ body(style = "transform: none; overflow: visible")
 	link(rel="stylesheet" type = "text/css" href="/stylesheets/bootstrap.css")
 	script(type = "text/javascript").
 		var local_data = !{JSON.stringify(users)}
+	script(type = "text/javascript").
+		var allorders = !{JSON.stringify(orders)}
 	script(type="text/javascript", src="/javascripts/orderPlacedSuccessfully.js")
